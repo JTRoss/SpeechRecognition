@@ -20,7 +20,7 @@ def google_transcribe(speech_file, model):
 
     audio = speech.types.RecognitionAudio(content=content)
 
-	#configures the language, model and encoding. Additionally can specify the audio rate in Hertz
+	#configures the language, model and encoding. Additionally can specify the audio rate, profanity filter, etc.
     config = speech.types.RecognitionConfig(
         encoding=speech.enums.RecognitionConfig.AudioEncoding.LINEAR16,
         language_code='en-US',
