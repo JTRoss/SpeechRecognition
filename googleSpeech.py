@@ -24,7 +24,8 @@ def google_transcribe(speech_file, model):
     config = speech.types.RecognitionConfig(
         encoding=speech.enums.RecognitionConfig.AudioEncoding.LINEAR16,
         language_code='en-US',
-		model=model)
+		model=model,
+		enable_automatic_punctuation=True)
 
     response = client.recognize(config, audio)
 
