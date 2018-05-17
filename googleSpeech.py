@@ -26,13 +26,17 @@ def google_transcribe(speech_file, model):
         language_code='en-US',
 		model=model,
 		enable_automatic_punctuation=True)
-
+		
+		
     response = client.recognize(config, audio)
-
+	
+    print('-' * 20)
+    print('Transcript: ')
+    print("\n")
+	
     for i, result in enumerate(response.results):
         alternative = result.alternatives[0]
-        print('-' * 20)
-        print(u'Transcript: {}'.format(alternative.transcript))
+        print(format(alternative.transcript))
 		
 
  
